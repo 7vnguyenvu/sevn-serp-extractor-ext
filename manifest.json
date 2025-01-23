@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "SevNSERP Extractor",
+    "version": "1.0",
+    "description": "Trích xuất danh sách kết quả tìm kiếm từ SERP",
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "scripting"
+    ],
+    "host_permissions": [
+        "*://*.google.com/*"
+    ],
+    "icons": {
+        "48": "icons/icon48.png",
+        "512": "icons/icon512.png"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.google.com/search*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
